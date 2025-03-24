@@ -1,19 +1,13 @@
 import styled from 'styled-components'
 import { color } from '../../styles'
 
-import japonesImg from '../../assets/images/japones.png'
-
 export const HeroContainer = styled.section`
   position: relative;
-  background: url(${japonesImg}) no-repeat center/cover;
+  background: no-repeat center/cover;
   padding: 32px;
   color: ${color.white};
   font-size: 32px;
   z-index: 1;
-
-  span {
-    font-weight: 100;
-  }
 
   &::after {
     content: '';
@@ -24,6 +18,14 @@ export const HeroContainer = styled.section`
     top: 0;
     left: 0;
     z-index: -1;
+  }
+
+  p {
+    font-weight: 100;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
   }
 `
 

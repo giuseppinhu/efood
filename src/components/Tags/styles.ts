@@ -8,4 +8,8 @@ export const TagContainer = styled.div`
   font-size: 12px;
   font-weight: bold;
   color: ${color.white2};
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
 `

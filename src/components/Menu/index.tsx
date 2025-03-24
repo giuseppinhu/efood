@@ -1,31 +1,29 @@
+import { Restaurant } from '../../pages/Home'
 import ItemMenu from '../ItemMenu'
 import { MenuList } from './styles'
 
-const Menu = () => (
-  <div>
-    <div className="container">
-      <MenuList>
-        <li>
-          <ItemMenu />
-        </li>
-        <li>
-          <ItemMenu />
-        </li>
-        <li>
-          <ItemMenu />
-        </li>
-        <li>
-          <ItemMenu />
-        </li>
-        <li>
-          <ItemMenu />
-        </li>
-        <li>
-          <ItemMenu />
-        </li>
-      </MenuList>
+type Props = {
+  restaurant: Restaurant
+}
+
+const Menu = ({ restaurant }: Props) => {
+  return (
+    <div>
+      <div className="container">
+        <MenuList>
+          {restaurant.cardapio.map((item, index) => (
+            <li key={index}>
+              <ItemMenu
+                title={item.nome}
+                img={item.foto}
+                description={item.descricao}
+              />
+            </li>
+          ))}
+        </MenuList>
+      </div>
     </div>
-  </div>
-)
+  )
+}
 
 export default Menu

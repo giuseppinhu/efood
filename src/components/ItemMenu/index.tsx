@@ -1,16 +1,17 @@
 import Button from '../Button'
 import { Card, Description, Title } from './styles'
 
-const ItemMenu = () => (
+export type Props = {
+  img: string
+  title: string
+  description: string
+}
+
+const ItemMenu = ({ img, title, description }: Props) => (
   <Card>
-    <img src="//placehold.co/305x167" alt="" />
-    <Title>Nome do prato</Title>
-    <Description>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus
-      voluptatem at explica/bo ab ullam dolorem fugit tempore sit similique quo
-      commodi odit, obcaecati quibusdam sequi labore aperiam porro quidem
-      dolores.
-    </Description>
+    <img src={img} alt={title} />
+    <Title>{title}</Title>
+    <Description>{description}</Description>
     <Button type="button">Adicionar ao Carrinho</Button>
   </Card>
 )

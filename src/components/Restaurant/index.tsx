@@ -15,19 +15,26 @@ import Button from '../Button'
 type Props = {
   name: string
   img: string
-  infos: string[]
-  avaliation: string
+  infos: string
+  avaliation: number
   description: string
+  highlight: boolean
 }
 
-const Restaurant = ({ name, img, infos, avaliation, description }: Props) => (
+const RestaurantElement = ({
+  name,
+  img,
+  infos,
+  avaliation,
+  description,
+  highlight
+}: Props) => (
   <Card>
-    <img src={img} alt={name} />
+    <img src={img} alt={name} className="card-img" />
     <div className="cardcontainer">
       <Infos>
-        {infos.map((info) => (
-          <Tag key={info}>{info}</Tag>
-        ))}
+        <Tag>{infos}</Tag>
+        {highlight && <Tag>destaque da Semana</Tag>}
       </Infos>
       <CardHeader>
         <Title>{name}</Title>
@@ -43,4 +50,4 @@ const Restaurant = ({ name, img, infos, avaliation, description }: Props) => (
     </div>
   </Card>
 )
-export default Restaurant
+export default RestaurantElement
