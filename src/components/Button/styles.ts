@@ -21,4 +21,5 @@ export const ButtonStyle = styled.button`
   background-color: ${color.pink2};
   border: none;
   color: ${color.pink};
+  cursor: pointer;
 `

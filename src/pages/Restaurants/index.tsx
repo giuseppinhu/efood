@@ -17,7 +17,7 @@ const Restaurants = () => {
   }, [id])
 
   if (!restaurant) {
-    return <h3>Carregando...</h3>
+    return <h1>Carregnado</h1>
   }
 
   return (

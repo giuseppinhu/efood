@@ -13,6 +13,7 @@ import {
 import Button from '../Button'
 
 type Props = {
+  id: number
   name: string
   img: string
   infos: string
@@ -22,6 +23,7 @@ type Props = {
 }
 
 const RestaurantElement = ({
+  id,
   name,
   img,
   infos,
@@ -44,7 +46,7 @@ const RestaurantElement = ({
         </Avaliation>
       </CardHeader>
       <Description>{description}</Description>
-      <Button type="link" to="/restaurantes">
+      <Button type="link" to={`/restaurantes/${id}`}>
         Saiba Mais
       </Button>
     </div>

@@ -14,6 +14,15 @@ export const RestaurantHeader = styled(HeaderContainer)`
   font-size: 18px;
   font-weight: 900;
   color: ${color.pink};
+
+  .link {
+    text-decoration: none;
+    color: ${color.pink};
+  }
+
+  svg {
+    margin-right: 5px;
+  }
 `
 
 export const Subtitle = styled.p`

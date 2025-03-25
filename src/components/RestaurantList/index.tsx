@@ -12,6 +12,7 @@ const RestaurantList = ({ restaurant }: Props) => (
       {restaurant.map((restaurant) => (
         <RestaurantElement
           key={restaurant.id}
+          id={restaurant.id}
           name={restaurant.titulo}
           avaliation={restaurant.avaliacao}
           description={restaurant.descricao}
