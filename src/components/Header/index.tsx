@@ -1,11 +1,23 @@
+import { useDispatch, useSelector } from 'react-redux'
 import { Link, useLocation } from 'react-router-dom'
 
 import brand from '../../assets/images/logo.png'
 import { Brand } from '../../styles'
 import { HeaderContainer, RestaurantHeader, Subtitle } from './styles'
 
+import { open } from '../../store/reducers/cart'
+import { RootReducer } from '../../store'
+
 const Header = () => {
   const location = useLocation()
+
+  const { items } = useSelector((state: RootReducer) => state.cart)
+
+  const dispatch = useDispatch()
+
+  const openCart = () => {
+    dispatch(open())
+  }
 
   return (
     <HeaderContainer>
@@ -43,7 +55,9 @@ const Header = () => {
               </span>
             </Link>
             <Brand src={brand} alt="brand" />
-            <span>0 produto(s) no carrinho</span>
+            <span onClick={openCart}>
+              {items.length} produto(s) no carrinho
+            </span>
           </RestaurantHeader>
         )}
       </div>

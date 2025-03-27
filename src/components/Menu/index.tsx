@@ -20,6 +20,8 @@ const Menu = ({ restaurant }: Props) => {
                 img={item.foto}
                 description={item.descricao}
                 porcao={item.porcao}
+                price={item.preco}
+                restaurant={restaurant}
               />
             </li>
           ))}

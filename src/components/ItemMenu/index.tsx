@@ -1,31 +1,59 @@
-import Button from '../Button'
-import { Card, Description, Modal, ModalContent, Title } from './styles'
-import close from '../../assets/images/close.png'
+import { useDispatch } from 'react-redux'
 import { useState } from 'react'
 
+import Button from '../Button'
+import close from '../../assets/images/close.png'
+import { Card, Description, Modal, ModalContent, Title } from './styles'
+import { Restaurant } from '../../pages/Home'
+import { add, open } from '../../store/reducers/cart'
+
 export type Props = {
+  restaurant: Restaurant
   img: string
   title: string
   description: string
   id: number
   porcao: string
+  price: string
 }
 
-const ItemMenu = ({ img, title, description, porcao }: Props) => {
+const ItemMenu = ({
+  img,
+  title,
+  description,
+  porcao,
+  price,
+  restaurant
+}: Props) => {
   const [modalIsOpen, setModaIsOpen] = useState(false)
+
+  const dispatch = useDispatch()
 
   const closeModal = () => {
     return setModaIsOpen(false)
   }
 
+  const formatPrices = (price = 0) => {
+    return new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    }).format(price)
+  }
+
+  const addItem = () => {
+    dispatch(add(restaurant))
+    closeModal()
+    dispatch(open())
+  }
+
   return (
     <>
       <Card>
-        <img src={img} alt={title} />
+        <img src={img} />
         <Title>{title}</Title>
         <Description>{description}</Description>
         <Button type="button" onClick={() => setModaIsOpen(true)}>
-          Adicionar ao Carrinho
+          + Detalhes sobre o prato
         </Button>
       </Card>
       <Modal className={modalIsOpen ? 'show' : ''}>
@@ -41,7 +69,10 @@ const ItemMenu = ({ img, title, description, porcao }: Props) => {
             <Title>{title}</Title>
             <Description>{description}</Description>
             <span>Serve: de {porcao}</span>
-            <Button type="button">Adicionar ao Carrinho - 00,00</Button>
+            <Button
+              type="button"
+              onClick={addItem}
+            >{`Adicionar ao carrinho - ${formatPrices(Number(price))}`}</Button>
           </div>
         </ModalContent>
         <div className="overlay" onClick={() => closeModal()}></div>
