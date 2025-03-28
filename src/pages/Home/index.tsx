@@ -15,7 +15,7 @@ export type Restaurant = {
     {
       id: number
       foto: string
-      preco: string
+      preco: number
       nome: string
       descricao: string
       porcao: string

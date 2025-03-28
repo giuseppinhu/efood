@@ -14,7 +14,14 @@ export type Props = {
   description: string
   id: number
   porcao: string
-  price: string
+  price: number
+}
+
+export const formatPrices = (price = 0) => {
+  return new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  }).format(price)
 }
 
 const ItemMenu = ({
@@ -31,13 +38,6 @@ const ItemMenu = ({
 
   const closeModal = () => {
     return setModaIsOpen(false)
-  }
-
-  const formatPrices = (price = 0) => {
-    return new Intl.NumberFormat('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    }).format(price)
   }
 
   const addItem = () => {
@@ -72,7 +72,7 @@ const ItemMenu = ({
             <Button
               type="button"
               onClick={addItem}
-            >{`Adicionar ao carrinho - ${formatPrices(Number(price))}`}</Button>
+            >{`Adicionar ao carrinho - ${formatPrices(price)}`}</Button>
           </div>
         </ModalContent>
         <div className="overlay" onClick={() => closeModal()}></div>

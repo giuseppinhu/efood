@@ -23,6 +23,10 @@ export const RestaurantHeader = styled(HeaderContainer)`
   svg {
     margin-right: 5px;
   }
+
+  span {
+    cursor: pointer;
+  }
 `
 
 export const Subtitle = styled.p`

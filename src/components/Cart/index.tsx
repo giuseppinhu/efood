@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux'
 
-import japa from '../../assets/images/japones.png'
 import Button from '../Button'
 import { CartContainer, CartItem, Overlay, Prices, SideBar } from './styles'
 import { RootReducer } from '../../store'
 
-import { close } from '../../store/reducers/cart'
+import { close, remove } from '../../store/reducers/cart'
+import { formatPrices } from '../ItemMenu'
 
 const Cart = () => {
   const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
@@ -16,27 +16,38 @@ const Cart = () => {
     dispatch(close())
   }
 
+  const removeItem = (id: number) => {
+    dispatch(remove(id))
+  }
+
+  // const getTotalPrice = () => {
+  //   return items.reduce((total, currentValue) => {
+  //     return (total += currentValue.cardapio[0].preco!)
+  //   }, 0)
+  // }
+
   return (
     <CartContainer className={isOpen ? 'is-open' : ''}>
       <Overlay onClick={closeCart} />
       <SideBar>
         <ul>
-          {items.map((item) =>
-            item.cardapio.map((cardaItem) => (
-              <CartItem key={cardaItem.id}>
-                <img src={cardaItem.foto} alt="image" />
-                <div>
-                  <h3>{cardaItem.nome}</h3>
-                  <span>{cardaItem.preco}</span>
-                </div>
-                <button type="button"></button>
-              </CartItem>
-            ))
-          )}
+          {items.map((item, index) => (
+            <CartItem key={item.id}>
+              <img src={item.cardapio[index].foto} alt="image" />
+              <div>
+                <h3>{item.cardapio[index].nome}</h3>
+                <span>{formatPrices(item.cardapio[index].preco)}</span>
+              </div>
+              <button
+                type="button"
+                onClick={() => removeItem(item.id)}
+              ></button>
+            </CartItem>
+          ))}
         </ul>
         <Prices>
           Valor Total:
-          <span>R$ 182,00</span>
+          {/* <span>{formatPrices(getTotalPrice())}</span> */}
         </Prices>
         <Button type="button">Continuar a entrega</Button>
       </SideBar>
