@@ -15,7 +15,7 @@ const Restaurants = () => {
   return (
     <>
       <Hero restaurant={restaurant} />
-      <Menu restaurant={restaurant} />
+      <Menu menu={restaurant.cardapio} />
     </>
   )
 }

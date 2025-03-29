@@ -2,10 +2,9 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import Button from '../Button'
 import { CartContainer, CartItem, Overlay, Prices, SideBar } from './styles'
-import { RootReducer } from '../../store'
 
+import { RootReducer } from '../../store'
 import { close, remove } from '../../store/reducers/cart'
-import { formatPrices } from '../ItemMenu'
 
 const Cart = () => {
   const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
@@ -31,12 +30,12 @@ const Cart = () => {
       <Overlay onClick={closeCart} />
       <SideBar>
         <ul>
-          {items.map((item, index) => (
+          {items.map((item) => (
             <CartItem key={item.id}>
-              <img src={item.cardapio[index].foto} alt="image" />
+              <img src={item.foto} alt="image" />
               <div>
-                <h3>{item.cardapio[index].nome}</h3>
-                <span>{formatPrices(item.cardapio[index].preco)}</span>
+                <h3>{item.nome}</h3>
+                <span>{item.preco}</span>
               </div>
               <button
                 type="button"
