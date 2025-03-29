@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 import close from '../../assets/images/close.png'
@@ -8,52 +7,60 @@ import { ModalContent, ModalDiv } from './style'
 import { Description, Title } from '../ItemMenu/styles'
 
 import { open, add } from '../../store/reducers/cart'
+import { Menu } from '../../pages/Home'
 
 type Props = {
   id: number
-  name: string
+  nome: string
   foto: string
   descricao: string
   preco: number
-  adicionar: () => void
+  porcao: string
+  closeModal: () => void
 }
 
-const Modal = () => {
-  const [modalIsOpen, setModaIsOpen] = useState(true)
+export const formatPrices = (price = 0) => {
+  return new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  }).format(price)
+}
+
+const Modal = ({
+  id,
+  nome,
+  foto,
+  descricao,
+  preco,
+  porcao,
+  closeModal
+}: Props) => {
+  const item: Menu = { id, nome, foto, descricao, preco, porcao }
 
   const dispatch = useDispatch()
 
-  const closeModal = () => {
-    return setModaIsOpen(false)
-  }
-
   const addItem = () => {
-    // dispatch(add())
+    dispatch(add(item))
     closeModal()
     dispatch(open())
   }
 
   return (
-    <ModalDiv className={modalIsOpen ? 'show' : ''}>
+    <ModalDiv className="show">
       <ModalContent className="container">
-        <img
-          className="close"
-          src={close}
-          alt="close"
-          onClick={() => closeModal()}
-        />
-        {/* <img src={img} /> */}
+        <img className="close" src={close} alt="close" onClick={closeModal} />
+        <img src={foto} />
         <div>
-          <Title>teste</Title>
-          <Description>teste</Description>
-          <span>Serve: de teste</span>
+          <Title>{nome}</Title>
+          <Description>{descricao}</Description>
+          <span>Serve: de {porcao}</span>
           <Button
             type="button"
             onClick={addItem}
-          >{`Adicionar ao carrinho - teste`}</Button>
+          >{`Adicionar ao carrinho - ${formatPrices(preco)}`}</Button>
         </div>
       </ModalContent>
-      <div className="overlay" onClick={() => closeModal()}></div>
+      <div className="overlay" onClick={closeModal}></div>
     </ModalDiv>
   )
 }

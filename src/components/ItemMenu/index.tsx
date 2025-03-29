@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Button from '../Button'
 import Modal from '../Modal'
 import { Card, Description, Title } from './styles'
@@ -8,21 +9,42 @@ export type Props = {
   img: string
   description: string
   portion: string
-  price: string
+  price: number
 }
 
-const ItemMenu = ({ img, name, description }: Props) => {
+const ItemMenu = ({ img, name, description, id, portion, price }: Props) => {
+  const [modalIsOpen, setModalIsOpen] = useState(false)
+
+  const openModal = () => {
+    setModalIsOpen(true)
+  }
+
+  const closeModal = () => {
+    setModalIsOpen(false)
+  }
+
   return (
     <>
       <Card>
         <img src={img} />
         <Title>{name}</Title>
         <Description>{description}</Description>
-        <Button type="button" onClick={() => console.log('Corinthians')}>
+        <Button type="button" onClick={openModal}>
           + Detalhes sobre o prato
         </Button>
       </Card>
-      <Modal />
+
+      {modalIsOpen && (
+        <Modal
+          id={id}
+          descricao={description}
+          foto={img}
+          nome={name}
+          porcao={portion}
+          preco={price}
+          closeModal={closeModal}
+        />
+      )}
     </>
   )
 }
