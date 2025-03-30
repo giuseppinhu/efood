@@ -5,6 +5,7 @@ import { CartContainer, CartItem, Overlay, Prices, SideBar } from './styles'
 
 import { RootReducer } from '../../store'
 import { close, remove } from '../../store/reducers/cart'
+import { formatPrices } from '../Modal'
 
 const Cart = () => {
   const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
@@ -19,11 +20,11 @@ const Cart = () => {
     dispatch(remove(id))
   }
 
-  // const getTotalPrice = () => {
-  //   return items.reduce((total, currentValue) => {
-  //     return (total += currentValue.cardapio[0].preco!)
-  //   }, 0)
-  // }
+  const getTotalPrice = () => {
+    return items.reduce((total, currentValue) => {
+      return (total += currentValue.preco!)
+    }, 0)
+  }
 
   return (
     <CartContainer className={isOpen ? 'is-open' : ''}>
@@ -35,7 +36,7 @@ const Cart = () => {
               <img src={item.foto} alt="image" />
               <div>
                 <h3>{item.nome}</h3>
-                <span>{item.preco}</span>
+                <span>{formatPrices(item.preco)}</span>
               </div>
               <button
                 type="button"
@@ -46,7 +47,7 @@ const Cart = () => {
         </ul>
         <Prices>
           Valor Total:
-          {/* <span>{formatPrices(getTotalPrice())}</span> */}
+          <span>{formatPrices(getTotalPrice())}</span>
         </Prices>
         <Button type="button">Continuar a entrega</Button>
       </SideBar>

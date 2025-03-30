@@ -64,6 +64,7 @@ export const CartItem = styled.li`
   }
 
   button {
+    cursor: pointer;
     position: absolute;
     bottom: 8px;
     right: 8px;

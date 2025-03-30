@@ -48,7 +48,6 @@ export const ModalContent = styled.div`
     margin: auto 0;
     right: 30px;
     position: absolute;
-    cursor: pointer;
   }
 
   img {

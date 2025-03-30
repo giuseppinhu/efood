@@ -3,6 +3,7 @@ import { Brand } from '../../styles'
 import { color } from '../../styles'
 
 export const FooterContainer = styled.footer`
+  width: 100%;
   background-color: ${color.pink2};
   padding: 40px;
 

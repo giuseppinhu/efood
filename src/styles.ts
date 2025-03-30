@@ -15,11 +15,13 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Roboto', sans-serif;
         list-style: none;
     }
-    
+      
     body {
+        height: 100%;
+        position: relative;
         background-color: ${color.white2}; 
     }
-
+        
     .container { 
         max-width: 1024px;
         width: 100%;
