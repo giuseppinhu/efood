@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useLocation } from 'react-router-dom'
 
-import brand from '../../assets/images/logo.png'
-import { Brand } from '../../styles'
-import { HeaderContainer, RestaurantHeader, Subtitle } from './styles'
-
 import { open } from '../../store/reducers/cart'
 import { RootReducer } from '../../store'
+
+import brand from '../../assets/images/logo.png'
+import { Brand } from '../../styles'
+import * as S from './styles'
 
 const Header = () => {
   const location = useLocation()
@@ -20,17 +20,17 @@ const Header = () => {
   }
 
   return (
-    <HeaderContainer>
+    <S.HeaderContainer>
       <div className="container">
         {location.pathname === '/' ? (
           <>
             <Brand src={brand} alt="brand" />
-            <Subtitle>
+            <S.Subtitle>
               Viva experiências gastronômicas no conforto da sua casa
-            </Subtitle>
+            </S.Subtitle>
           </>
         ) : (
-          <RestaurantHeader>
+          <S.RestaurantHeader>
             <Link className="link" to="/">
               <span>
                 <svg
@@ -58,10 +58,10 @@ const Header = () => {
             <span onClick={openCart}>
               {items.length} produto(s) no carrinho
             </span>
-          </RestaurantHeader>
+          </S.RestaurantHeader>
         )}
       </div>
-    </HeaderContainer>
+    </S.HeaderContainer>
   )
 }
 

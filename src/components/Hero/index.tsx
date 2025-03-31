@@ -1,6 +1,4 @@
-import { Restaurant } from '../../pages/Home'
-
-import { HeroContainer, Subtitle } from './styles'
+import * as S from './styles'
 
 type Props = {
   restaurant: Restaurant
@@ -8,16 +6,16 @@ type Props = {
 
 const Hero = ({ restaurant }: Props) => {
   return (
-    <HeroContainer
+    <S.HeroContainer
       style={{
         backgroundImage: `url(${restaurant.capa})`
       }}
     >
       <div className="container">
         <p>{restaurant.tipo}</p>
-        <Subtitle>{restaurant.titulo}</Subtitle>
+        <S.Subtitle>{restaurant.titulo}</S.Subtitle>
       </div>
-    </HeroContainer>
+    </S.HeroContainer>
   )
 }
 

@@ -1,6 +1,5 @@
 import RestaurantElement from '../Restaurant'
 import { List } from './styles'
-import { Restaurant } from '../../pages/Home'
 
 type Props = {
   restaurant: Restaurant[]

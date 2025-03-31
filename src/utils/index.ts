@@ -1,5 +1,3 @@
-import { Menu } from '../pages/Home'
-
 export const formatPrices = (price = 0) => {
   return new Intl.NumberFormat('pt-BR', {
     style: 'currency',

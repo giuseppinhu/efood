@@ -1,14 +1,7 @@
 import Tag from '../Tags'
 import star from '../../assets/images/estrela.png'
 
-import {
-  Card,
-  Description,
-  Title,
-  Avaliation,
-  Infos,
-  CardHeader
-} from './styles'
+import * as S from './styles'
 
 import Button from '../Button'
 
@@ -31,25 +24,25 @@ const RestaurantElement = ({
   description,
   highlight
 }: Props) => (
-  <Card>
+  <S.Card>
     <img src={img} alt={name} className="card-img" />
     <div className="cardcontainer">
-      <Infos>
+      <S.Infos>
         <Tag>{infos}</Tag>
         {highlight && <Tag>destaque da Semana</Tag>}
-      </Infos>
-      <CardHeader>
-        <Title>{name}</Title>
-        <Avaliation>
+      </S.Infos>
+      <S.CardHeader>
+        <S.Title>{name}</S.Title>
+        <S.Avaliation>
           <span>{avaliation}</span>
           <img src={star} />
-        </Avaliation>
-      </CardHeader>
-      <Description>{description}</Description>
+        </S.Avaliation>
+      </S.CardHeader>
+      <S.Description>{description}</S.Description>
       <Button type="link" to={`/restaurantes/${id}`}>
         Saiba Mais
       </Button>
     </div>
-  </Card>
+  </S.Card>
 )
 export default RestaurantElement

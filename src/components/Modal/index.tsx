@@ -1,14 +1,13 @@
 import { useDispatch } from 'react-redux'
 
+import Button from '../Button'
 import close from '../../assets/images/close.png'
 
-import Button from '../Button'
-import { ModalContent, ModalDiv } from './style'
-import { Description, Title } from '../ItemMenu/styles'
 import { formatPrices } from '../../utils'
-
 import { open, add } from '../../store/reducers/cart'
-import { Menu } from '../../pages/Home'
+
+import { Description, Title } from '../ItemMenu/styles'
+import * as S from './style'
 
 type Props = {
   id: number
@@ -40,8 +39,8 @@ const Modal = ({
   }
 
   return (
-    <ModalDiv className="show">
-      <ModalContent className="container">
+    <S.ModalDiv className="show">
+      <S.ModalContent className="container">
         <img className="close" src={close} alt="close" onClick={closeModal} />
         <img src={foto} />
         <div>
@@ -53,9 +52,9 @@ const Modal = ({
             onClick={addItem}
           >{`Adicionar ao carrinho - ${formatPrices(preco)}`}</Button>
         </div>
-      </ModalContent>
+      </S.ModalContent>
       <div className="overlay" onClick={closeModal}></div>
-    </ModalDiv>
+    </S.ModalDiv>
   )
 }
 

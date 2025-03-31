@@ -1,7 +1,9 @@
 import { useState } from 'react'
+
 import Button from '../Button'
 import Modal from '../Modal'
-import { Card, Description, Title } from './styles'
+
+import * as S from './styles'
 
 export type Props = {
   id: number
@@ -25,14 +27,14 @@ const ItemMenu = ({ img, name, description, id, portion, price }: Props) => {
 
   return (
     <>
-      <Card>
+      <S.Card>
         <img src={img} />
-        <Title>{name}</Title>
-        <Description>{description}</Description>
+        <S.Title>{name}</S.Title>
+        <S.Description>{description}</S.Description>
         <Button type="button" onClick={openModal}>
           + Detalhes sobre o prato
         </Button>
-      </Card>
+      </S.Card>
 
       {modalIsOpen && (
         <Modal

@@ -1,4 +1,4 @@
-import { ButtonLink, ButtonStyle } from './styles'
+import * as S from './styles'
 
 type Props = {
   type: 'button' | 'link'
@@ -10,16 +10,16 @@ type Props = {
 const Button = ({ children, type, to, onClick }: Props) => {
   if (type === 'link') {
     return (
-      <ButtonLink type="link" to={to as string}>
+      <S.ButtonLink type="link" to={to as string}>
         {children}
-      </ButtonLink>
+      </S.ButtonLink>
     )
   }
 
   return (
-    <ButtonStyle type="button" onClick={onClick}>
+    <S.ButtonStyle type="button" onClick={onClick}>
       {children}
-    </ButtonStyle>
+    </S.ButtonStyle>
   )
 }
 
