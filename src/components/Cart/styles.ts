@@ -3,38 +3,6 @@ import { color } from '../../styles'
 
 import trash from '../../assets/images/trash.png'
 
-export const Overlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-`
-
-export const CartContainer = styled.div`
-  position: fixed;
-  display: none;
-  justify-content: flex-end;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1;
-
-  &.is-open {
-    display: flex;
-  }
-`
-
-export const SideBar = styled.aside`
-  background-color: ${color.pink};
-  padding: 32px 8px 0 8px;
-  max-width: 360px;
-  width: 100%;
-  z-index: 1;
-`
-
 export const CartItem = styled.li`
   display: flex;
   max-width: 344px;

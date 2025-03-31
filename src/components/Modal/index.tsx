@@ -5,6 +5,7 @@ import close from '../../assets/images/close.png'
 import Button from '../Button'
 import { ModalContent, ModalDiv } from './style'
 import { Description, Title } from '../ItemMenu/styles'
+import { formatPrices } from '../../utils'
 
 import { open, add } from '../../store/reducers/cart'
 import { Menu } from '../../pages/Home'
@@ -17,13 +18,6 @@ type Props = {
   preco: number
   porcao: string
   closeModal: () => void
-}
-
-export const formatPrices = (price = 0) => {
-  return new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL'
-  }).format(price)
 }
 
 const Modal = ({
