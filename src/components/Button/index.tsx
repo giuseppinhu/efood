@@ -5,9 +5,10 @@ type Props = {
   to?: string
   onClick?: () => void
   children: string | JSX.Element
+  disabled?: boolean
 }
 
-const Button = ({ children, type, to, onClick }: Props) => {
+const Button = ({ children, type, to, onClick, disabled }: Props) => {
   if (type === 'link') {
     return (
       <S.ButtonLink type="link" to={to as string}>
@@ -17,7 +18,7 @@ const Button = ({ children, type, to, onClick }: Props) => {
   }
 
   return (
-    <S.ButtonStyle type={type} onClick={onClick}>
+    <S.ButtonStyle type={type} onClick={onClick} disabled={disabled}>
       {children}
     </S.ButtonStyle>
   )

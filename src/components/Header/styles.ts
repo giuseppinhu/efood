@@ -14,6 +14,8 @@ export const RestaurantHeader = styled(HeaderContainer)`
   font-size: 18px;
   font-weight: 900;
   color: ${color.pink};
+  justify-content: space-between;
+  width: 100%;
 
   .link {
     text-decoration: none;

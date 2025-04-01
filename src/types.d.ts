@@ -48,3 +48,7 @@ declare type PurchasePayload = {
     }
   }
 }
+
+declare type RestaurantParams = {
+  id: string
+}

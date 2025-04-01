@@ -1,3 +1,4 @@
+import Loader from '../../components/Loader'
 import RestaurantList from '../../components/RestaurantList'
 
 import { useGetFeaturedRestaurantQuery } from '../../services/api'
@@ -13,7 +14,7 @@ const Home = () => {
     )
   }
 
-  return <h3>Carregando...</h3>
+  return <Loader />
 }
 
 export default Home

@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useFormik } from 'formik'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { ClipLoader } from 'react-spinners'
 import InputMask from 'react-input-mask'
 
 import Button from '../Button'
@@ -14,6 +15,7 @@ import { usePurchaseMutation } from '../../services/api'
 
 import { formatPrices, getTotalPrice } from '../../utils'
 import * as S from './styles'
+import { color } from '../../styles'
 
 type skipCartProp = {
   stateNow: React.Dispatch<React.SetStateAction<boolean>>
@@ -364,10 +366,14 @@ const Checkout = () => {
                         />
                       </S.InputGroup>
                     </S.Row>
-                    <Button type="submit" onClick={form.handleSubmit}>
+                    <Button
+                      type="submit"
+                      onClick={form.handleSubmit}
+                      disabled={isLoading}
+                    >
                       <>
                         {isLoading ? (
-                          <span>teste</span>
+                          <ClipLoader color={color.pink} size={16} />
                         ) : (
                           <span>Finalizar Compra</span>
                         )}
