@@ -1,10 +1,10 @@
 import * as S from './styles'
 
 type Props = {
-  type: 'button' | 'link'
+  type: 'button' | 'link' | 'submit'
   to?: string
   onClick?: () => void
-  children: string
+  children: string | JSX.Element
 }
 
 const Button = ({ children, type, to, onClick }: Props) => {
@@ -17,7 +17,7 @@ const Button = ({ children, type, to, onClick }: Props) => {
   }
 
   return (
-    <S.ButtonStyle type="button" onClick={onClick}>
+    <S.ButtonStyle type={type} onClick={onClick}>
       {children}
     </S.ButtonStyle>
   )

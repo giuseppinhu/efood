@@ -7,6 +7,10 @@ export const color = {
   white2: '#FFF8F2'
 }
 
+export const breakpoint = {
+  tablet: '768px'
+}
+
 export const GlobalStyle = createGlobalStyle`
     * {
         margin: 0;

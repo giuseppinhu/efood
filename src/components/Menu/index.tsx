@@ -1,8 +1,6 @@
 import ItemMenu from '../ItemMenu'
 import { MenuList } from './styles'
 
-interface MenuProps extends Menu {}
-
 type Props = {
   menu: MenuProps[]
 }

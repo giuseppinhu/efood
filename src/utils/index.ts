@@ -5,7 +5,7 @@ export const formatPrices = (price = 0) => {
   }).format(price)
 }
 
-export const getTotalPrice = (item: Menu[]) => {
+export const getTotalPrice = (item: MenuProps[]) => {
   return item.reduce((total, currentValue) => {
     if (currentValue.preco) {
       return (total += currentValue.preco)

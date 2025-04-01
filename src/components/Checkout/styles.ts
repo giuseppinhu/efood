@@ -28,6 +28,19 @@ export const SideBar = styled.aside`
   width: 100%;
   z-index: 1;
 
+  h2 {
+    font-weight: bold;
+    font-size: 16px;
+    color: ${color.pink2};
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 22px;
+    color: ${color.pink2};
+  }
+
   .text-empty {
     display: flex;
     justify-content: center;
@@ -57,13 +70,6 @@ export const Overlay = styled.div`
 
 export const Content = styled.div`
   margin-bottom: 24px;
-
-  h2 {
-    font-weight: bold;
-    font-size: 16px;
-    color: ${color.pink2};
-    margin-bottom: 8px;
-  }
 
   ${ButtonStyle} {
     margin-bottom: 8px;
@@ -97,6 +103,10 @@ export const InputGroup = styled.div<InputProp>`
     background-color: ${color.pink2};
     border: 1px solid ${color.pink2};
     margin-top: 8px;
+
+    &.error {
+      border-color: red;
+    }
   }
 `
 

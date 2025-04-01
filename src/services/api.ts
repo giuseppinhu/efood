@@ -12,7 +12,11 @@ const api = createApi({
       query: (id) => `restaurantes/${id}`
     }),
     purchase: builder.mutation<any, PurchasePayload>({
-      query: () => 'checkout'
+      query: (body) => ({
+        url: 'checkout',
+        method: 'POST',
+        body
+      })
     })
   })
 })

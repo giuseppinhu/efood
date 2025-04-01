@@ -28,7 +28,7 @@ const Modal = ({
   porcao,
   closeModal
 }: Props) => {
-  const item: Menu = { id, nome, foto, descricao, preco, porcao }
+  const item: MenuProps = { id, nome, foto, descricao, preco, porcao }
 
   const dispatch = useDispatch()
 

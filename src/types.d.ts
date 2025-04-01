@@ -1,4 +1,4 @@
-declare interface Menu {
+declare interface MenuProps {
   id: number
   foto: string
   preco: number
@@ -16,7 +16,7 @@ declare type Restaurant = {
   descricao: string
   capa: string
 
-  cardapio: Menu[]
+  cardapio: MenuProps[]
 }
 
 declare type Product = {
@@ -25,23 +25,23 @@ declare type Product = {
 }
 
 declare type PurchasePayload = {
-  product: Product[]
+  products: Product[]
   delivery: {
     receiver: string
-  }
-  address: {
-    description: string
-    city: string
-    zipcode: string
-    number: number
-    complement?: string
+    address: {
+      city: string
+      zipCode: string
+      number: number
+      description?: string
+      complement?: string
+    }
   }
   payment: {
     card: {
       name: string
       number: string
       code: number
-      experies: {
+      expires: {
         month: number
         year: number
       }
