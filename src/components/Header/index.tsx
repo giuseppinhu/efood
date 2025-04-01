@@ -32,7 +32,7 @@ const Header = () => {
         ) : (
           <S.RestaurantHeader>
             <Link className="link" to="/">
-              <span>
+              <span className="button-home">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   version="1.1"
@@ -54,7 +54,9 @@ const Header = () => {
                 Restaurantes
               </span>
             </Link>
-            <Brand src={brand} alt="brand" />
+            <Link to="/">
+              <Brand src={brand} alt="brand" />
+            </Link>
             <span onClick={openCart}>
               {items.length} produto(s) no carrinho
             </span>

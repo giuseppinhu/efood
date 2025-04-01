@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { color } from '../../styles'
+import { breakpoint, color } from '../../styles'
 import backgroundImg from '../../assets/images/fundo.png'
 
 export const HeaderContainer = styled.header`
@@ -26,6 +26,20 @@ export const RestaurantHeader = styled(HeaderContainer)`
 
   span {
     cursor: pointer;
+  }
+
+  @media (max-width: ${breakpoint.tablet}) {
+    display: block;
+
+    span {
+      display: block;
+      text-align: center;
+      margin-top: 24px;
+    }
+
+    .button-home {
+      display: none;
+    }
   }
 `
 
