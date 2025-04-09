@@ -1,46 +1,44 @@
-# Getting Started with Create React App
+# 🍽️ Efood – Viva sua melhor experiência gastronômica
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Efood Banner](inserir-link-da-imagem-aqui)
 
-## Available Scripts
+## 🔍 Funcionalidades do Site
 
-In the project directory, you can run:
+- **Catálogo de Restaurantes**: Explore todos os estabelecimentos disponíveis na rede Efood.
+- **Cardápio Completo**: Visualize os pratos de cada restaurante com preços, destaques e descrições.
+- **Sistema de Checkout**: Compre seus pratos favoritos de forma simples e rápida, e receba o número do seu pedido para acompanhamento.
 
-### `npm start`
+### 🔗 Acesse o Projeto:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+▶︎ [Clique aqui para acessar o Efood](https://efood-ten-swart.vercel.app/)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+## 🛠 Tecnologias Utilizadas
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **React** – Componentização, controle de estado e integração entre JS e HTML.
+- **React Router** – Navegação eficiente entre páginas.
+- **Redux e RTK** – Gerenciamento centralizado de estado e consumo de APIs.
+- **TypeScript** – Tipagem estática para maior segurança no desenvolvimento.
+- **Styled-Components** – Estilização com CSS-in-JS.
+- **Formik e Yup** – Validação e gerenciamento de formulários com tipagem segura.
+- **React Loader** – Estilização dos loaders da aplicação.
+- **Design Responsivo** – Layout otimizado para dispositivos móveis e tablets.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🎯 Objetivo do Projeto
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Desenvolver uma plataforma moderna para facilitar a conexão entre restaurantes e consumidores, permitindo:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- A visualização de cardápios por estabelecimento.
+- A realização de pedidos online.
+- A finalização da compra com sistema de checkout.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+> 💡 *Este projeto foi proposto pela EBAC e desenvolvido com foco nos estudos práticos de React, Redux, RTK, integração com APIs (GET e POST), interatividade, responsividade e validação de formulários.*
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+📂 Sinta-se à vontade para contribuir, abrir issues ou enviar pull requests!
