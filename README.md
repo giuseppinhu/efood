@@ -1,6 +1,6 @@
 # 🍽️ Efood – Viva sua melhor experiência gastronômica
 
-![Efood Banner](inserir-link-da-imagem-aqui)
+![Efood Banner](https://giuseppinhu.github.io/portifolio/src/assets/projects/efood.jpeg)
 
 ## 🔍 Funcionalidades do Site
 
